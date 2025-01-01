@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML & JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .container h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #56ccf2, #2f80ed);
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .output {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2f80ed;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+    <div class="container">
+        <h1>Welcome to Our Web!</h1>
+        <button class="btn" id="clickMe">Click Me!</button>
+        <div class="output" id="output">Press the button for a surprise.</div>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById('clickMe').addEventListener('click', () => {
+            const messages = [
+                'You are amazing!',
+                'Keep shining!',
+                'Stay awesome!',
+                'You just made my day better!',
+                'You rock!'
+            ];
+
+            const outputDiv = document.getElementById('output');
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+            outputDiv.textContent = randomMessage;
+            outputDiv.style.color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        });
+    </script>
+</body>
+</html>
